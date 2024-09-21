@@ -7,6 +7,7 @@ struct MainFooter: Component {
             .horizontalAlignment(.center)
             .foregroundStyle(.darkGray)
             .background(.white)
-            .position(.stickyBottom)
+            .margin(.top, .extraLarge)
+            .margin(.bottom, .large)
     }
 }
