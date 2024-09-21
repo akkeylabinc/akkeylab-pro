@@ -84,6 +84,7 @@ struct Home: StaticPage {
             } header: {
                 "Programming Language"
             }
+            .margin(.bottom, .small)
 
             Card {
                 Section {
@@ -100,6 +101,7 @@ struct Home: StaticPage {
             }
         }
         .columns(2)
-        .padding(.top, .extraLarge)
+        .padding(.vertical, .extraLarge)
+        .padding(.horizontal, .small)
     }
 }
