@@ -23,5 +23,5 @@ struct ExampleSite: Site {
     var author = "AkkeyLab"
 
     var homePage = Home()
-    var theme = BaseTheme()
+    var theme = MainTheme()
 }

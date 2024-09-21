@@ -1,7 +1,7 @@
 import Foundation
 import Ignite
 
-struct BaseTheme: Theme {
+struct MainTheme: Theme {
     func render(page: Page, context: PublishingContext) -> HTML {
         HTML {
             Head(for: page, in: context)
@@ -9,7 +9,7 @@ struct BaseTheme: Theme {
             Body {
                 page.body
 
-                IgniteFooter()
+                MainFooter()
             }
         }
     }
