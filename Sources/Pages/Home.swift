@@ -41,7 +41,8 @@ struct Home: StaticPage {
 
     func body(context: PublishingContext) -> [BlockElement] {
         NavigationBar(logo: title) {
-            Link("Company", target: "https://akkeylab.ltd")
+            Link("お問い合わせ", target: "https://x.com/AkkeyLab")
+            Link("運営会社", target: "https://akkeylab.ltd")
         }
         .background(Color(hex: "#286AA3"))
         .navigationItemAlignment(.trailing)
