@@ -95,5 +95,8 @@ struct Home: StaticPage {
         .columns(2)
         .padding(.vertical, .extraLarge)
         .padding(.horizontal, .small)
+
+        Embed(title: "form", url: "https://docs.google.com/forms/d/e/1FAIpQLSdSDfZNhWuYLy5Vt6rsCkAdEEAqUO0FLvurRfZbpTw3Joz6Mg/viewform?embedded=true")
+            .aspectRatio(.r4x3)
     }
 }
