@@ -17,11 +17,15 @@ struct IgniteWebsite {
 struct ExampleSite: Site {    
     var name = "AkkeyLab Pro"
     var titleSuffix = " – Online Programming School"
-    var url = URL("https://akkeylab.pro")
+    var url = URL(string: "https://akkeylab.pro")!
     var builtInIconsEnabled = true
 
     var author = "AkkeyLab"
 
     var homePage = Home()
     var theme = MainTheme()
+    var pages: [any StaticPage] {
+        Home()
+        PrivacyPolicy()
+    }
 }

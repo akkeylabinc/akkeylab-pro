@@ -7,8 +7,8 @@ struct MainTheme: Theme {
             Head(for: page, in: context)
 
             Body {
+                MainHeader()
                 page.body
-
                 MainFooter()
             }
         }
