@@ -35,7 +35,7 @@ jobs:
       - name: Set up Xcode
         run: sudo xcode-select -switch /Applications/Xcode.app
       - name: Build AkkeyLabPro scheme
-        run: xcodebuild -scheme AkkeyLabPro -configuration Debug -sdk macosx
+        run: xcodebuild -scheme AkkeyLabPro -configuration Debug -sdk macosx -destination 'platform=macOS'
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
