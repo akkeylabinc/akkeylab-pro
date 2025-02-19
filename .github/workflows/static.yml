@@ -28,10 +28,14 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Set up Xcode
+        run: sudo xcode-select -switch /Applications/Xcode.app
+      - name: Build AkkeyLabPro scheme
+        run: xcodebuild -scheme AkkeyLabPro -configuration Debug -sdk macosx
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
