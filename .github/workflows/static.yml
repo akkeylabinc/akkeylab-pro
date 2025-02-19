@@ -41,9 +41,9 @@ jobs:
       - name: Set up Xcode
         run: sudo xcode-select -switch /Applications/Xcode.app
       - name: Clean DerivedData
-        run: rm -rf ~/Library/Developer/Xcode/DerivedData
+        run: rm -rf ~/Library/Developer/Xcode/DerivedData && rm -rf ./DerivedData
       - name: Build AkkeyLabPro scheme
-        run: xcodebuild -scheme AkkeyLabPro -configuration Release -sdk macosx -destination 'platform=macOS' -derivedDataPath ./DerivedData
+        run: xcodebuild -scheme AkkeyLabPro -configuration Release -sdk macosx -destination 'platform=macOS' -derivedDataPath ./DerivedData -disablePackageRepositoryCache
       - name: Run AkkeyLabPro App
         run: ./DerivedData/Build/Products/Release/AkkeyLabPro
       - name: Setup Pages
