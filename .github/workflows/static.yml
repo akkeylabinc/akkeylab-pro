@@ -5,7 +5,13 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches:
+      - "main"
+    paths:
+      - "Sources/**"
+      - "Assets/**"
+      - "Package.resolved"
+      - ".github/workflows/static.yml"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -35,7 +41,9 @@ jobs:
       - name: Set up Xcode
         run: sudo xcode-select -switch /Applications/Xcode.app
       - name: Build AkkeyLabPro scheme
-        run: xcodebuild -scheme AkkeyLabPro -configuration Debug -sdk macosx -destination 'platform=macOS'
+        run: xcodebuild -scheme AkkeyLabPro -configuration Release -sdk macosx -destination 'platform=macOS' -derivedDataPath ./DerivedData
+      - name: Run AkkeyLabPro App
+        run: ./DerivedData/Build/Products/Release/AkkeyLabPro
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
