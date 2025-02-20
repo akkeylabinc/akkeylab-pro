@@ -35,11 +35,17 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: macos-latest
+    env:
+      DEVELOPER_DIR: /Applications/Xcode.app
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Set up Xcode
-        run: sudo xcode-select -switch /Applications/Xcode.app
+      - name: Cache SwiftPM dependencies
+        uses: actions/cache@v4
+        with:
+          key: xcode-${{ runner.os }}-${{ hashFiles('Package.resolved') }}
+          restore-keys: xcode-${{ runner.os }}-
+          path: SourcePackages
       - name: Build AkkeyLabPro scheme
         # https://forums.swift.org/t/xcode-and-swift-package-manager/44704/7
         run: |
