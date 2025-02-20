@@ -45,7 +45,9 @@ jobs:
         with:
           key: xcode-${{ runner.os }}-${{ hashFiles('Package.resolved') }}
           restore-keys: xcode-${{ runner.os }}-
-          path: SourcePackages
+          path: |
+            .swiftpm
+            .build
       - name: Build AkkeyLabPro scheme
         # https://forums.swift.org/t/xcode-and-swift-package-manager/44704/7
         run: |
