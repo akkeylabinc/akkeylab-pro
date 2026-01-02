@@ -96,9 +96,6 @@ struct Home: StaticPage {
         .padding(.vertical, .extraLarge)
         .padding(.horizontal, .small)
 
-        Embed(title: "article", url: "https://www.qualitas-web.com/itaya_akio")
-            .aspectRatio(.square)
-
         Embed(title: "form", url: "https://docs.google.com/forms/d/e/1FAIpQLSdSDfZNhWuYLy5Vt6rsCkAdEEAqUO0FLvurRfZbpTw3Joz6Mg/viewform?embedded=true")
             .aspectRatio(.r4x3)
     }
